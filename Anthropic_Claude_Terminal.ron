@@ -1,0 +1,43 @@
+(
+    name: "Anthropic Claude",
+    background: (red: 0.07843, green: 0.07843, blue: 0.07450, alpha: 1.0), // Warm Charcoal
+    foreground: (red: 0.98039, green: 0.97647, blue: 0.96078, alpha: 1.0), // Pampas
+    cursor: (red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0),     // Crail Orange
+    bright_foreground: (red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0),
+    dim_foreground: (red: 0.69019, green: 0.68235, blue: 0.64705, alpha: 1.0), // Mid Gray
+    
+    // ANSI Colors
+    palette: (
+        // Black (Background / Surface)
+        black: (red: 0.07843, green: 0.07843, blue: 0.07450, alpha: 1.0),
+        bright_black: (red: 0.16470, green: 0.16470, blue: 0.16078, alpha: 1.0),
+
+        // Red (Error / Crail)
+        red: (red: 0.75686, green: 0.37254, blue: 0.23529, alpha: 1.0),
+        bright_red: (red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0),
+
+        // Green (Success / Olive)
+        green: (red: 0.47058, green: 0.54901, blue: 0.36470, alpha: 1.0),
+        bright_green: (red: 0.56078, green: 0.65490, blue: 0.43529, alpha: 1.0),
+
+        // Yellow (Warning / Gold)
+        yellow: (red: 0.85098, green: 0.67058, blue: 0.20000, alpha: 1.0),
+        bright_yellow: (red: 1.0, green: 0.82352, blue: 0.24705, alpha: 1.0),
+
+        // Blue (Serenity)
+        blue: (red: 0.41568, green: 0.60784, blue: 0.80000, alpha: 1.0),
+        bright_blue: (red: 0.52549, green: 0.70196, blue: 0.88235, alpha: 1.0),
+
+        // Magenta (Mapped to a softer Purple/Gray for harmony)
+        magenta: (red: 0.61568, green: 0.47058, blue: 0.75294, alpha: 1.0),
+        bright_magenta: (red: 0.70588, green: 0.55686, blue: 0.85098, alpha: 1.0),
+
+        // Cyan (Mapped to a Slate/Indigo)
+        cyan: (red: 0.45098, green: 0.55686, blue: 0.75294, alpha: 1.0),
+        bright_cyan: (red: 0.55098, green: 0.65686, blue: 0.85294, alpha: 1.0),
+
+        // White (Text)
+        white: (red: 0.90980, green: 0.90196, blue: 0.86274, alpha: 1.0),
+        bright_white: (red: 0.98039, green: 0.97647, blue: 0.96078, alpha: 1.0),
+    )
+)

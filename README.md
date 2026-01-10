@@ -33,7 +33,13 @@ If you prefer to only apply the colors without changing window geometry:
 3.  Select **Custom/Import**.
 4.  Select `Anthropic_Claude_Accent.ron`.
 
-### 3. Icon Theme (Optional)
+### 3. COSMIC Terminal
+1.  Open **COSMIC Terminal**.
+2.  Go to **Settings** -> **Profiles**.
+3.  Select **Anthropic Claude**.
+    *   *Note:* If it doesn't appear, you can manually import `Anthropic_Claude_Terminal.ron` from this folder.
+
+### 4. Icon Theme (Optional)
 This package installs a custom icon set to match the theme (Crail Orange folders and app icons).
 
 1.  The icons have been automatically installed to `~/.local/share/icons/Anthropic-Claude`.

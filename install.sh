@@ -48,7 +48,14 @@ cp $SOURCE_DIR/$THEME_FILE "$HOME/.local/share/cosmic/themes/"
 
 echo -e "${GREEN}Theme files copied to: $HOME/.local/share/cosmic/themes/${NC}"
 
-# --- 3. Final Instructions ---
+# --- 3. Install Terminal Profile ---
+echo "Installing Terminal Profile..."
+TERM_DEST="$HOME/.config/cosmic/com.system76.CosmicTerm/v1/profiles"
+mkdir -p "$TERM_DEST"
+cp "$SOURCE_DIR/Anthropic_Claude_Terminal.ron" "$TERM_DEST/"
+echo -e "${GREEN}Terminal profile installed.${NC}"
+
+# --- 4. Final Instructions ---
 echo ""
 echo -e "${ORANGE}==========================================${NC}"
 echo -e "${GREEN}INSTALLATION COMPLETE${NC}"
@@ -61,5 +68,7 @@ echo "2. Under 'Icons', select ${GREEN}$THEME_NAME${NC}."
 echo "3. Under 'Theme', click ${ORANGE}Import${NC} and navigate to:"
 echo "   ${GREEN}$HOME/.local/share/cosmic/themes/${NC}"
 echo "   Select either 'Anthropic_Claude_Inspired.ron' (Solid) or 'Anthropic_Claude_Frosted.ron' (Blurred)"
+echo "4. Open ${ORANGE}COSMIC Terminal${NC} -> ${ORANGE}Settings${NC} -> ${ORANGE}Profiles${NC}."
+echo "   Select ${GREEN}Anthropic Claude${NC}."
 echo ""
 echo "Enjoy your new desktop!"
