@@ -170,28 +170,31 @@ fi
 # --- 6. Firefox Theme Helper ---
 echo ""
 echo -e "${ORANGE}Firefox Theme${NC}"
-echo "Mozilla restricts automatic theme installation. It must be loaded manually as a temporary addon or signed/packaged."
-read -p "Install Firefox theme now? (a)uto / (y)es / (n)o " -n 1 -r
+echo "Mozilla restricts automatic theme installation. It must be loaded manually."
+read -p "Launch Firefox to install the theme now? (y/n) " -n 1 -r
 echo ""
-if [[ $REPLY =~ ^[AaYy]$ ]]; then
-    echo -e "${GREEN}1. Opening theme folder...${NC}"
-    if command -v xdg-open &> /dev/null; then
-        xdg-open "$SOURCE_DIR/extras/firefox" 2>/dev/null
-    elif command -v nautilus &> /dev/null; then
-        nautilus "$SOURCE_DIR/extras/firefox" 2>/dev/null &
-    else
-        echo "Could not open folder automatically. Path: $SOURCE_DIR/extras/firefox"
-    fi
-    
-    echo -e "${GREEN}2. Opening Firefox debugging page...${NC}"
-    echo "   -> Click 'Load Temporary Add-on'"
-    echo "   -> Select 'manifest.json' from the opened folder."
-    
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    FIREFOX_MANIFEST="$SOURCE_DIR/extras/firefox/manifest.json"
+
+    echo -e "Launching Firefox to ${ORANGE}about:debugging${NC}..."
     if command -v firefox &> /dev/null; then
         nohup firefox "about:debugging#/runtime/this-firefox" >/dev/null 2>&1 &
     else
-        echo "Firefox command not found. Please open 'about:debugging' manually."
+        echo -e "${RED}Firefox command not found.${NC} Please open Firefox manually."
     fi
+    
+    echo ""
+    echo -e "${ORANGE}-------------------------------------------------------${NC}"
+    echo -e "${ORANGE}              INSTRUCTIONS                             ${NC}"
+    echo -e "${ORANGE}-------------------------------------------------------${NC}"
+    echo -e "1. Click the ${GREEN}Load Temporary Add-on...${NC} button."
+    echo -e "2. In the file selection window, press ${ORANGE}Ctrl+L${NC} (or paste location)."
+    echo -e "3. Paste this exact path:"
+    echo ""
+    echo -e "   ${GREEN}$FIREFOX_MANIFEST${NC}"
+    echo ""
+    echo -e "4. Click ${GREEN}Open${NC}."
+    echo -e "${ORANGE}-------------------------------------------------------${NC}"
 else
     echo "Skipping Firefox helper."
     echo "To install later, load '$SOURCE_DIR/extras/firefox/manifest.json' in about:debugging."
