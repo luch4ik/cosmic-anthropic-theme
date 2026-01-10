@@ -1,0 +1,8 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Back of folder -->
+  <path d="M12 32C12 25.3726 17.3726 20 24 20H52L64 32H104C110.627 32 116 37.3726 116 44V96C116 102.627 110.627 108 104 108H24C17.3726 108 12 102.627 12 96V32Z" fill="#d97757"/>
+  <!-- Front flap -->
+  <path d="M12 52C12 45.3726 17.3726 40 24 40H104C110.627 40 116 45.3726 116 52V96C116 102.627 110.627 108 104 108H24C17.3726 108 12 102.627 12 96V52Z" fill="#d97757" fill-opacity="0.9"/>
+  <!-- Highlight on flap -->
+  <path d="M12 52H116V56H12V52Z" fill="#faf9f5" fill-opacity="0.2"/>
+</svg>
