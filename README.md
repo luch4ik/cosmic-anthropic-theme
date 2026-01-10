@@ -46,7 +46,11 @@ The installer places a high-quality PNG wallpaper in `~/.local/share/backgrounds
 
 ### 5. Extras
 *   **GTK 4.0 Override:** Installed automatically to fix legacy GNOME apps.
-*   **Firefox Theme:** Located in `extras/firefox`. Load it via `about:debugging` -> `This Firefox` -> `Load Temporary Add-on`.
+*   **Firefox Theme:** Located in `extras/firefox`. Load it via `about:debugging` -> `This Firefox` -> `Load Temporary Ad-on`.
+
+## Recommended Companion Icons
+For a more comprehensive "Material" look that perfectly complements the geometry of this theme, we highly recommend the **MaterialOS Linux Icon Pack**:
+*   **GitHub:** [materialos/Linux-Icon-Pack](https://github.com/materialos/Linux-Icon-Pack)
 
 ## Compatibility
 This theme is designed for:
