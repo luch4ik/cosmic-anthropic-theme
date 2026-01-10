@@ -22,7 +22,8 @@ This theme file has been validated against the official COSMIC configuration str
 3.  Click **Import**.
 4.  Select one of the following:
     *   **`Anthropic_Claude_Inspired.ron`**: The authentic, opaque "Paper" look (Recommended).
-    *   **`Anthropic_Claude_Frosted.ron`**: A modern variant with translucent, blurred backgrounds.
+    *   **`Anthropic_Claude_Frosted.ron`**: A modern variant with translucent (85%), blurred backgrounds.
+    *   **`Anthropic_Claude_Glass.ron`**: A high-transparency (60%) variant for maximum blur.
 
 ### 2. Manual Color Palette
 If you prefer to only apply the colors without changing window geometry:
