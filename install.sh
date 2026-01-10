@@ -23,7 +23,7 @@ if [ -d "$ICON_DEST" ]; then
     rm -rf "$ICON_DEST"
 fi
 mkdir -p "$ICON_DEST"
-cp -r "$SOURCE_DIR/icons/$THEME_NAME/"* "$ICON_DEST/"
+cp -r "$SOURCE_DIR/icons/"* "$ICON_DEST/"
 
 # Update Icon Cache
 if command -v gtk-update-icon-cache &> /dev/null; then
