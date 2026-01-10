@@ -40,7 +40,7 @@ If you prefer to only apply the colors without changing window geometry:
     *   *Note:* If it doesn't appear, you can manually import `Anthropic_Claude_Terminal.ron` from this folder.
 
 ### 4. Wallpaper
-The installer places a custom wallpaper in `~/.local/share/backgrounds/cosmic`.
+The installer places a high-quality PNG wallpaper in `~/.local/share/backgrounds/cosmic`.
 1.  Go to **Desktop** -> **Wallpaper**.
 2.  Select the **Anthropic Claude** background.
 

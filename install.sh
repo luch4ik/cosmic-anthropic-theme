@@ -100,8 +100,8 @@ echo -e "${GREEN}GTK 4.0 override installed.${NC}"
 # Wallpaper
 WALL_DEST="$HOME/.local/share/backgrounds/cosmic"
 mkdir -p "$WALL_DEST"
-cp "$SOURCE_DIR/extras/wallpaper/anthropic-claude-wallpaper.svg" "$WALL_DEST/"
-echo -e "${GREEN}Wallpaper installed.${NC}"
+cp "$SOURCE_DIR/extras/wallpaper/anthropic-claude-wallpaper.png" "$WALL_DEST/"
+echo -e "${GREEN}Wallpaper (PNG) installed.${NC}"
 
 # Firefox Instructions (Manual)
 echo -e "${ORANGE}NOTE: To install the Firefox theme, open 'about:debugging', click 'This Firefox', then 'Load Temporary Add-on', and select:${NC}"
