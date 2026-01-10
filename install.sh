@@ -15,6 +15,26 @@ GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
 NC='\033[0m' # No Color
 
+# Check for existing install
+EXISTING_THEME="$HOME/.local/share/cosmic/themes/Anthropic_Claude_Inspired.ron"
+if [ -f "$EXISTING_THEME" ]; then
+    echo -e "${ORANGE}Existing installation detected.${NC}"
+    read -p "Do you want to uninstall the existing theme and start fresh? (Y/n) " -n 1 -r
+    echo ""
+    if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+        if [ -f "$SOURCE_DIR/uninstall.sh" ]; then
+            echo "Running uninstaller..."
+            # Make sure it's executable
+            chmod +x "$SOURCE_DIR/uninstall.sh"
+            "$SOURCE_DIR/uninstall.sh"
+        else
+            echo "Uninstall script not found. Proceeding with overwrite."
+        fi
+    else
+        echo "Proceeding with update (files will be overwritten)..."
+    fi
+fi
+
 echo -e "${ORANGE}Installing Anthropic Claude Theme components...${NC}"
 
 # --- 1. Install Icons ---
