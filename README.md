@@ -20,7 +20,9 @@ This theme file has been validated against the official COSMIC configuration str
 1.  Open **COSMIC Settings** (or the COSMIC Tweaks app).
 2.  Navigate to **Appearance** -> **Theme**.
 3.  Click **Import**.
-4.  Select `Anthropic_Claude_Inspired.ron`.
+4.  Select one of the following:
+    *   **`Anthropic_Claude_Inspired.ron`**: The authentic, opaque "Paper" look (Recommended).
+    *   **`Anthropic_Claude_Frosted.ron`**: A modern variant with translucent, blurred backgrounds.
 
 ### 2. Manual Color Palette
 If you prefer to only apply the colors without changing window geometry:

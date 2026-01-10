@@ -8,7 +8,7 @@ THEME_NAME="Anthropic-Claude"
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ICON_DEST="$HOME/.local/share/icons/$THEME_NAME"
 THEME_DEST="$HOME/.config/cosmic/themes" # Attempting standard config path, fallback to local share
-THEME_FILE="Anthropic_Claude_Inspired.ron"
+THEME_FILE="Anthropic_Claude_*.ron"
 
 # Colors
 GREEN='\033[0;32m'
@@ -41,12 +41,12 @@ echo -e "${GREEN}Icons installed successfully.${NC}"
 echo "Preparing Theme File..."
 # Create a user themes directory if it doesn't exist (Standard XDG location for some apps)
 mkdir -p "$HOME/.local/share/cosmic/themes"
-cp "$SOURCE_DIR/$THEME_FILE" "$HOME/.local/share/cosmic/themes/"
+cp $SOURCE_DIR/$THEME_FILE "$HOME/.local/share/cosmic/themes/"
 
 # Also copy to Documents for visibility if easy access is needed, or just keep it in the share folder.
 # Let's just stick to printing the path clearly.
 
-echo -e "${GREEN}Theme file copied to: $HOME/.local/share/cosmic/themes/$THEME_FILE${NC}"
+echo -e "${GREEN}Theme files copied to: $HOME/.local/share/cosmic/themes/${NC}"
 
 # --- 3. Final Instructions ---
 echo ""
@@ -59,6 +59,7 @@ echo ""
 echo "1. Open ${ORANGE}COSMIC Settings${NC} -> ${ORANGE}Desktop${NC} -> ${ORANGE}Appearance${NC}."
 echo "2. Under 'Icons', select ${GREEN}$THEME_NAME${NC}."
 echo "3. Under 'Theme', click ${ORANGE}Import${NC} and navigate to:"
-echo "   ${GREEN}$HOME/.local/share/cosmic/themes/$THEME_FILE${NC}"
+echo "   ${GREEN}$HOME/.local/share/cosmic/themes/${NC}"
+echo "   Select either 'Anthropic_Claude_Inspired.ron' (Solid) or 'Anthropic_Claude_Frosted.ron' (Blurred)"
 echo ""
 echo "Enjoy your new desktop!"
