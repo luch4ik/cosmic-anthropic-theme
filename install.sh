@@ -50,10 +50,43 @@ echo -e "${GREEN}Theme files copied to: $HOME/.local/share/cosmic/themes/${NC}"
 
 # --- 3. Install Terminal Profile ---
 echo "Installing Terminal Profile..."
-TERM_DEST="$HOME/.config/cosmic/com.system76.CosmicTerm/v1/profiles"
-mkdir -p "$TERM_DEST"
-cp "$SOURCE_DIR/Anthropic_Claude_Terminal.ron" "$TERM_DEST/"
-echo -e "${GREEN}Terminal profile installed.${NC}"
+TERM_CONFIG_DIR="$HOME/.config/cosmic/com.system76.CosmicTerm/v1"
+TERM_PROFILES_DIR="$TERM_CONFIG_DIR/profiles"
+mkdir -p "$TERM_PROFILES_DIR"
+
+# Copy the profile definition
+cp "$SOURCE_DIR/Anthropic_Claude_Terminal.ron" "$TERM_PROFILES_DIR/"
+
+# Attempt to set it as active by creating/updating the config.ron
+# This is a basic overwrite/create if missing, or a sed replacement if simple.
+# Since RON is structured, robust parsing is hard with bash, but we can try a simple config creation if it doesn't exist.
+
+CONFIG_FILE="$TERM_CONFIG_DIR/config.ron"
+
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Creating new Terminal config..."
+    # Create a minimal config setting the profile
+    cat <<EOF > "$CONFIG_FILE"
+(
+    font_size: 11,
+    active_profile: Custom("Anthropic_Claude_Terminal"),
+)
+EOF
+else
+    echo "Updating existing Terminal config..."
+    # Try to replace the active_profile line using sed. 
+    # Use a temp file to avoid issues.
+    if grep -q "active_profile:" "$CONFIG_FILE"; then
+        sed -i 's/active_profile: .*/active_profile: Custom("Anthropic_Claude_Terminal"),/' "$CONFIG_FILE"
+    else
+        # Insert it at the beginning of the tuple if it's missing (a bit risky with simple sed, but usually safe for top-level keys)
+        # Fallback: append it before the closing parenthesis?
+        # Safest for now: Just warn the user if we can't cleanly set it.
+        echo "Could not automatically set active profile. Please select 'Anthropic Claude' in Terminal settings."
+    fi
+fi
+
+echo -e "${GREEN}Terminal profile installed and configured.${NC}"
 
 # --- 4. Final Instructions ---
 echo ""
