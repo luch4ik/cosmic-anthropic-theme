@@ -18,20 +18,26 @@ NC='\033[0m' # No Color
 echo -e "${ORANGE}Installing Anthropic Claude Theme components...${NC}"
 
 # --- 1. Install Icons ---
-echo "Installing Icon Theme..."
-if [ -d "$ICON_DEST" ]; then
-    rm -rf "$ICON_DEST"
-fi
-mkdir -p "$ICON_DEST"
-cp -r "$SOURCE_DIR/icons/"* "$ICON_DEST/"
+echo ""
+read -p "Install Anthropic Claude Icon Theme (Official)? (Y/n) " -n 1 -r
+echo ""
+if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+    echo "Installing Icon Theme..."
+    if [ -d "$ICON_DEST" ]; then
+        rm -rf "$ICON_DEST"
+    fi
+    mkdir -p "$ICON_DEST"
+    cp -r "$SOURCE_DIR/icons/"* "$ICON_DEST/"
 
-# Update Icon Cache
-if command -v gtk-update-icon-cache &> /dev/null; then
-    echo "Updating icon cache..."
-    gtk-update-icon-cache -f "$ICON_DEST"
+    # Update Icon Cache
+    if command -v gtk-update-icon-cache &> /dev/null; then
+        echo "Updating icon cache..."
+        gtk-update-icon-cache -f "$ICON_DEST"
+    fi
+    echo -e "${GREEN}Icons installed successfully.${NC}"
+else
+    echo "Skipping Anthropic Claude icons."
 fi
-
-echo -e "${GREEN}Icons installed successfully.${NC}"
 
 # --- 2. Install Theme File ---
 # COSMIC doesn't always auto-discover ron files in a specific folder without import,
@@ -98,10 +104,17 @@ cp "$SOURCE_DIR/extras/gtk/gtk.css" "$GTK_DEST/"
 echo -e "${GREEN}GTK 4.0 override installed.${NC}"
 
 # Wallpaper
-WALL_DEST="$HOME/.local/share/backgrounds/cosmic"
-mkdir -p "$WALL_DEST"
-cp "$SOURCE_DIR/extras/wallpaper/anthropic-claude-wallpaper.png" "$WALL_DEST/"
-echo -e "${GREEN}Wallpaper (PNG) installed.${NC}"
+echo ""
+read -p "Install Anthropic Claude Wallpaper? (Y/n) " -n 1 -r
+echo ""
+if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+    WALL_DEST="$HOME/.local/share/backgrounds/cosmic"
+    mkdir -p "$WALL_DEST"
+    cp "$SOURCE_DIR/extras/wallpaper/anthropic-claude-wallpaper.png" "$WALL_DEST/"
+    echo -e "${GREEN}Wallpaper (PNG) installed.${NC}"
+else
+    echo "Skipping wallpaper."
+fi
 
 # Firefox Instructions (Manual)
 echo -e "${ORANGE}NOTE: To install the Firefox theme, open 'about:debugging', click 'This Firefox', then 'Load Temporary Add-on', and select:${NC}"
