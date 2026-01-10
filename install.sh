@@ -107,7 +107,38 @@ echo -e "${GREEN}Wallpaper (PNG) installed.${NC}"
 echo -e "${ORANGE}NOTE: To install the Firefox theme, open 'about:debugging', click 'This Firefox', then 'Load Temporary Add-on', and select:${NC}"
 echo -e "${GREEN}$SOURCE_DIR/extras/firefox/manifest.json${NC}"
 
-# --- 5. Final Instructions ---
+# --- 5. Optional: MaterialOS Icons ---
+echo ""
+echo -e "${ORANGE}Recommended: MaterialOS Linux Icon Pack${NC}"
+echo "These icons perfectly complement the geometric style of this theme."
+read -p "Do you want to download and install MaterialOS icons? (y/N) " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Downloading MaterialOS icons..."
+    TEMP_DIR=$(mktemp -d)
+    
+    # Download master zip
+    curl -L "https://github.com/materialos/Linux-Icon-Pack/archive/refs/heads/master.zip" -o "$TEMP_DIR/MaterialOS.zip"
+    
+    # Unzip
+    unzip -q "$TEMP_DIR/MaterialOS.zip" -d "$TEMP_DIR"
+    
+    # Install
+    TARGET_ICON_DIR="$HOME/.local/share/icons/MaterialOS"
+    if [ -d "$TARGET_ICON_DIR" ]; then
+        rm -rf "$TARGET_ICON_DIR"
+    fi
+    mv "$TEMP_DIR/Linux-Icon-Pack-master" "$TARGET_ICON_DIR"
+    
+    # Clean up
+    rm -rf "$TEMP_DIR"
+    
+    echo -e "${GREEN}MaterialOS icons installed to $TARGET_ICON_DIR${NC}"
+else
+    echo "Skipping MaterialOS icons."
+fi
+
+# --- 6. Final Instructions ---
 echo ""
 echo -e "${ORANGE}==========================================${NC}"
 echo -e "${GREEN}INSTALLATION COMPLETE${NC}"
@@ -116,7 +147,7 @@ echo ""
 echo "To apply the changes:"
 echo ""
 echo "1. Open ${ORANGE}COSMIC Settings${NC} -> ${ORANGE}Desktop${NC} -> ${ORANGE}Appearance${NC}."
-echo "2. Under 'Icons', select ${GREEN}$THEME_NAME${NC}."
+echo "2. Under 'Icons', select ${GREEN}MaterialOS${NC} (Recommended) or ${GREEN}$THEME_NAME${NC}."
 echo "3. Under 'Theme', click ${ORANGE}Import${NC} and navigate to:"
 echo "   ${GREEN}$HOME/.local/share/cosmic/themes/${NC}"
 echo "   Select either 'Anthropic_Claude_Inspired.ron' (Solid) or 'Anthropic_Claude_Frosted.ron' (Blurred)"
