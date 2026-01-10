@@ -39,13 +39,14 @@ If you prefer to only apply the colors without changing window geometry:
 3.  Select **Anthropic Claude**.
     *   *Note:* If it doesn't appear, you can manually import `Anthropic_Claude_Terminal.ron` from this folder.
 
-### 4. Icon Theme (Optional)
-This package installs a custom icon set to match the theme (Crail Orange folders and app icons).
+### 4. Wallpaper
+The installer places a custom wallpaper in `~/.local/share/backgrounds/cosmic`.
+1.  Go to **Desktop** -> **Wallpaper**.
+2.  Select the **Anthropic Claude** background.
 
-1.  The icons have been automatically installed to `~/.local/share/icons/Anthropic-Claude`.
-2.  Open **COSMIC Settings**.
-3.  Navigate to **Desktop** -> **Appearance** -> **Icons**.
-4.  Select **Anthropic Claude**.
+### 5. Extras
+*   **GTK 4.0 Override:** Installed automatically to fix legacy GNOME apps.
+*   **Firefox Theme:** Located in `extras/firefox`. Load it via `about:debugging` -> `This Firefox` -> `Load Temporary Add-on`.
 
 ## Compatibility
 This theme is designed for:

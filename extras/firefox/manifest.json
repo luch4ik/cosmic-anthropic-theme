@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Anthropic Claude Theme",
+  "description": "Warm Charcoal and Crail Orange theme inspired by Anthropic.",
+  "theme": {
+    "colors": {
+      "frame": [20, 20, 19],
+      "tab_background_text": [176, 174, 165],
+      "toolbar": [42, 42, 41],
+      "toolbar_text": [250, 249, 245],
+      "toolbar_field": [20, 20, 19],
+      "toolbar_field_text": [250, 249, 245],
+      "tab_line": [217, 119, 87],
+      "popup": [42, 42, 41],
+      "popup_text": [250, 249, 245],
+      "popup_border": [20, 20, 19],
+      "icons": [250, 249, 245],
+      "icons_attention": [217, 119, 87],
+      "frame_inactive": [20, 20, 19],
+      "button_background_active": [217, 119, 87],
+      "button_background_hover": [63, 63, 62],
+      "ntp_background": [20, 20, 19],
+      "ntp_text": [250, 249, 245],
+      "sidebar": [20, 20, 19],
+      "sidebar_text": [250, 249, 245],
+      "sidebar_border": [42, 42, 41]
+    }
+  }
+}

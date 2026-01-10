@@ -88,7 +88,26 @@ fi
 
 echo -e "${GREEN}Terminal profile installed and configured.${NC}"
 
-# --- 4. Final Instructions ---
+# --- 4. Install Extras ---
+echo "Installing Extras..."
+
+# GTK Theme Override
+GTK_DEST="$HOME/.config/gtk-4.0"
+mkdir -p "$GTK_DEST"
+cp "$SOURCE_DIR/extras/gtk/gtk.css" "$GTK_DEST/"
+echo -e "${GREEN}GTK 4.0 override installed.${NC}"
+
+# Wallpaper
+WALL_DEST="$HOME/.local/share/backgrounds/cosmic"
+mkdir -p "$WALL_DEST"
+cp "$SOURCE_DIR/extras/wallpaper/anthropic-claude-wallpaper.svg" "$WALL_DEST/"
+echo -e "${GREEN}Wallpaper installed.${NC}"
+
+# Firefox Instructions (Manual)
+echo -e "${ORANGE}NOTE: To install the Firefox theme, open 'about:debugging', click 'This Firefox', then 'Load Temporary Add-on', and select:${NC}"
+echo -e "${GREEN}$SOURCE_DIR/extras/firefox/manifest.json${NC}"
+
+# --- 5. Final Instructions ---
 echo ""
 echo -e "${ORANGE}==========================================${NC}"
 echo -e "${GREEN}INSTALLATION COMPLETE${NC}"
@@ -103,5 +122,6 @@ echo "   ${GREEN}$HOME/.local/share/cosmic/themes/${NC}"
 echo "   Select either 'Anthropic_Claude_Inspired.ron' (Solid) or 'Anthropic_Claude_Frosted.ron' (Blurred)"
 echo "4. Open ${ORANGE}COSMIC Terminal${NC} -> ${ORANGE}Settings${NC} -> ${ORANGE}Profiles${NC}."
 echo "   Select ${GREEN}Anthropic Claude${NC}."
+echo "5. Select the wallpaper in ${ORANGE}Desktop${NC} -> ${ORANGE}Wallpaper${NC}."
 echo ""
 echo "Enjoy your new desktop!"
