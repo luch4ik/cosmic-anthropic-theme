@@ -167,43 +167,7 @@ else
     echo "Skipping MaterialOS icons."
 fi
 
-# --- 6. Firefox Theme Helper ---
-echo ""
-echo -e "${ORANGE}Firefox Theme${NC}"
-echo "Mozilla restricts automatic theme installation. It must be loaded manually."
-read -p "Launch Firefox to install the theme now? (y/n) " -n 1 -r
-echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    FIREFOX_MANIFEST="$SOURCE_DIR/extras/firefox/manifest.json"
-
-    echo -e "Launching Firefox to ${ORANGE}about:debugging${NC}..."
-    if command -v firefox &> /dev/null; then
-        nohup firefox "about:debugging#/runtime/this-firefox" >/dev/null 2>&1 &
-    else
-        echo -e "${RED}Firefox command not found.${NC} Please open Firefox manually."
-    fi
-    
-    echo ""
-    echo -e "${ORANGE}-------------------------------------------------------${NC}"
-    echo -e "${ORANGE}              INSTRUCTIONS                             ${NC}"
-    echo -e "${ORANGE}-------------------------------------------------------${NC}"
-    echo -e "1. Click the ${GREEN}Load Temporary Add-on...${NC} button."
-    echo -e "2. In the file selection window, press ${ORANGE}Ctrl+L${NC} (or paste location)."
-    echo -e "3. Paste this exact path:"
-    echo ""
-    echo -e "   ${GREEN}$FIREFOX_MANIFEST${NC}"
-    echo ""
-    echo -e "4. Click ${GREEN}Open${NC}."
-    echo -e "${ORANGE}-------------------------------------------------------${NC}"
-    
-    echo ""
-    read -p "Press Enter once you have copied the path or installed the extension..."
-else
-    echo "Skipping Firefox helper."
-    echo "To install later, load '$SOURCE_DIR/extras/firefox/manifest.json' in about:debugging."
-fi
-
-# --- 7. Final Instructions ---
+# --- 6. Final Instructions ---
 echo ""
 echo -e "${ORANGE}==========================================${NC}"
 echo -e "${GREEN}INSTALLATION COMPLETE${NC}"
