@@ -1,8 +1,14 @@
 {
   "manifest_version": 2,
   "version": "1.0",
-  "name": "Anthropic Claude Theme",
-  "description": "Warm Charcoal and Crail Orange theme inspired by Anthropic.",
+  "name": "Crail Paper Theme",
+  "description": "Warm Charcoal and Crail Orange theme inspired by modern design principles.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "crail-paper-theme@luch4ik",
+      "strict_min_version": "60.0"
+    }
+  },
   "theme": {
     "colors": {
       "frame": [20, 20, 19],
