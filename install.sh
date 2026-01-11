@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Anthropic Claude Theme Installer for COSMIC DE
+# Crail Paper Theme Installer for COSMIC DE
 
 set -e # Exit on error
 
-THEME_NAME="Anthropic-Claude"
+THEME_NAME="Crail-Paper"
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ICON_DEST="$HOME/.local/share/icons/$THEME_NAME"
-THEME_DEST="$HOME/.config/cosmic/themes" # Attempting standard config path, fallback to local share
-THEME_FILE="Anthropic_Claude_*.ron"
+THEME_DEST="$HOME/.config/cosmic/themes"
+THEME_FILE="Crail_Paper_*.ron"
 
 # Colors
 GREEN='\033[0;32m'
@@ -16,7 +16,7 @@ ORANGE='\033[0;33m'
 NC='\033[0m' # No Color
 
 # Check for existing install
-EXISTING_THEME="$HOME/.local/share/cosmic/themes/Anthropic_Claude_Inspired.ron"
+EXISTING_THEME="$HOME/.local/share/cosmic/themes/Crail_Paper_Solid.ron"
 if [ -f "$EXISTING_THEME" ]; then
     echo -e "${ORANGE}Existing installation detected.${NC}"
     read -p "Do you want to uninstall the existing theme and start fresh? (Y/n) " -n 1 -r
@@ -24,7 +24,6 @@ if [ -f "$EXISTING_THEME" ]; then
     if [[ ! $REPLY =~ ^[Nn]$ ]]; then
         if [ -f "$SOURCE_DIR/uninstall.sh" ]; then
             echo "Running uninstaller..."
-            # Make sure it's executable
             chmod +x "$SOURCE_DIR/uninstall.sh"
             "$SOURCE_DIR/uninstall.sh"
         else
@@ -35,11 +34,11 @@ if [ -f "$EXISTING_THEME" ]; then
     fi
 fi
 
-echo -e "${ORANGE}Installing Anthropic Claude Theme components...${NC}"
+echo -e "${ORANGE}Installing Crail Paper Theme components...${NC}"
 
 # --- 1. Install Icons ---
 echo ""
-read -p "Install Anthropic Claude Icon Theme (Official)? (Y/n) " -n 1 -r
+read -p "Install Crail Paper Icon Theme? (Y/n) " -n 1 -r
 echo ""
 if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     echo "Installing Icon Theme..."
@@ -56,21 +55,13 @@ if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     fi
     echo -e "${GREEN}Icons installed successfully.${NC}"
 else
-    echo "Skipping Anthropic Claude icons."
+    echo "Skipping icons."
 fi
 
-# --- 2. Install Theme File ---
-# COSMIC doesn't always auto-discover ron files in a specific folder without import,
-# but we'll try to place it in a sensible user directory for easy finding.
-# We'll also try the ~/.config/cosmic/themes path if it exists or create it.
-
-echo "Preparing Theme File..."
-# Create a user themes directory if it doesn't exist (Standard XDG location for some apps)
+# --- 2. Install Theme Files ---
+echo "Preparing Theme Files..."
 mkdir -p "$HOME/.local/share/cosmic/themes"
 cp $SOURCE_DIR/$THEME_FILE "$HOME/.local/share/cosmic/themes/"
-
-# Also copy to Documents for visibility if easy access is needed, or just keep it in the share folder.
-# Let's just stick to printing the path clearly.
 
 echo -e "${GREEN}Theme files copied to: $HOME/.local/share/cosmic/themes/${NC}"
 
@@ -80,35 +71,24 @@ TERM_CONFIG_DIR="$HOME/.config/cosmic/com.system76.CosmicTerm/v1"
 TERM_PROFILES_DIR="$TERM_CONFIG_DIR/profiles"
 mkdir -p "$TERM_PROFILES_DIR"
 
-# Copy the profile definition
-cp "$SOURCE_DIR/Anthropic_Claude_Terminal.ron" "$TERM_PROFILES_DIR/"
-
-# Attempt to set it as active by creating/updating the config.ron
-# This is a basic overwrite/create if missing, or a sed replacement if simple.
-# Since RON is structured, robust parsing is hard with bash, but we can try a simple config creation if it doesn't exist.
+cp "$SOURCE_DIR/Crail_Paper_Terminal.ron" "$TERM_PROFILES_DIR/"
 
 CONFIG_FILE="$TERM_CONFIG_DIR/config.ron"
 
 if [ ! -f "$CONFIG_FILE" ]; then
     echo "Creating new Terminal config..."
-    # Create a minimal config setting the profile
     cat <<EOF > "$CONFIG_FILE"
 (
     font_size: 11,
-    active_profile: Custom("Anthropic_Claude_Terminal"),
+    active_profile: Custom("Crail_Paper_Terminal"),
 )
 EOF
 else
     echo "Updating existing Terminal config..."
-    # Try to replace the active_profile line using sed. 
-    # Use a temp file to avoid issues.
     if grep -q "active_profile:" "$CONFIG_FILE"; then
-        sed -i 's/active_profile: .*/active_profile: Custom("Anthropic_Claude_Terminal"),/' "$CONFIG_FILE"
+        sed -i 's/active_profile: .*/active_profile: Custom("Crail_Paper_Terminal"),/' "$CONFIG_FILE"
     else
-        # Insert it at the beginning of the tuple if it's missing (a bit risky with simple sed, but usually safe for top-level keys)
-        # Fallback: append it before the closing parenthesis?
-        # Safest for now: Just warn the user if we can't cleanly set it.
-        echo "Could not automatically set active profile. Please select 'Anthropic Claude' in Terminal settings."
+        echo "Could not automatically set active profile. Please select 'Crail Paper' in Terminal settings."
     fi
 fi
 
@@ -125,13 +105,13 @@ echo -e "${GREEN}GTK 4.0 override installed.${NC}"
 
 # Wallpaper
 echo ""
-read -p "Install Anthropic Claude Wallpaper? (Y/n) " -n 1 -r
+read -p "Install Theme Wallpaper? (Y/n) " -n 1 -r
 echo ""
 if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     WALL_DEST="$HOME/.local/share/backgrounds/cosmic"
     mkdir -p "$WALL_DEST"
     cp "$SOURCE_DIR/extras/wallpaper/anthropic-claude-wallpaper.png" "$WALL_DEST/"
-    echo -e "${GREEN}Wallpaper (PNG) installed.${NC}"
+    echo -e "${GREEN}Wallpaper installed.${NC}"
 else
     echo "Skipping wallpaper."
 fi
@@ -145,23 +125,14 @@ echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Downloading MaterialOS icons..."
     TEMP_DIR=$(mktemp -d)
-    
-    # Download master zip
     curl -L "https://github.com/materialos/Linux-Icon-Pack/archive/refs/heads/master.zip" -o "$TEMP_DIR/MaterialOS.zip"
-    
-    # Unzip
     unzip -q "$TEMP_DIR/MaterialOS.zip" -d "$TEMP_DIR"
-    
-    # Install
     TARGET_ICON_DIR="$HOME/.local/share/icons/MaterialOS"
     if [ -d "$TARGET_ICON_DIR" ]; then
         rm -rf "$TARGET_ICON_DIR"
     fi
     mv "$TEMP_DIR/Linux-Icon-Pack-master" "$TARGET_ICON_DIR"
-    
-    # Clean up
     rm -rf "$TEMP_DIR"
-    
     echo -e "${GREEN}MaterialOS icons installed to $TARGET_ICON_DIR${NC}"
 else
     echo "Skipping MaterialOS icons."
@@ -179,9 +150,9 @@ echo -e "1. Open ${ORANGE}COSMIC Settings${NC} -> ${ORANGE}Desktop${NC} -> ${ORA
 echo -e "2. Under 'Icons', select ${GREEN}MaterialOS${NC} (Recommended) or ${GREEN}$THEME_NAME${NC}."
 echo -e "3. Under 'Theme', click ${ORANGE}Import${NC} and navigate to:"
 echo -e "   ${GREEN}$HOME/.local/share/cosmic/themes/${NC}"
-echo "   Select either 'Anthropic_Claude_Inspired.ron' (Solid) or 'Anthropic_Claude_Frosted.ron' (Blurred)"
+echo "   Select 'Crail_Paper_Solid.ron', 'Crail_Paper_Frosted.ron', or 'Crail_Paper_Glass.ron'."
 echo -e "4. Open ${ORANGE}COSMIC Terminal${NC} -> ${ORANGE}Settings${NC} -> ${ORANGE}Profiles${NC}."
-echo -e "   Select ${GREEN}Anthropic Claude${NC}."
+echo -e "   Select ${GREEN}Crail Paper${NC}."
 echo -e "5. Select the wallpaper in ${ORANGE}Desktop${NC} -> ${ORANGE}Wallpaper${NC}."
 echo ""
 echo "Enjoy your new desktop!"

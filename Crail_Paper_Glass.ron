@@ -1,70 +1,42 @@
 (
     palette: Dark((
-        name: "Anthropic Claude (Inspired)",
+        name: "Crail Paper (Glass)",
         
         // --- Functional Colors ---
-        // Red: Used for errors. Mapped to Crail/Terra-cotta for a softer alert.
         bright_red: (red: 0.75686, green: 0.37254, blue: 0.23529, alpha: 1.0),
-        // Green: Used for success. Mapped to the brand's Olive Green.
         bright_green: (red: 0.47058, green: 0.54901, blue: 0.36470, alpha: 1.0),
-        // Orange: The primary brand accent (Crail).
         bright_orange: (red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0),
         
-        // --- Backgrounds ---
-        // Gray 1: The main background. "Warm Charcoal" #141413
-        gray_1: (red: 0.07843, green: 0.07843, blue: 0.07450, alpha: 1.0),
-        // Gray 2: Secondary background/surfaces. Slightly lighter charcoal. #2a2a29
-        gray_2: (red: 0.16470, green: 0.16470, blue: 0.16078, alpha: 1.0),
+        // --- Backgrounds (High Transparency for Glass Effect) ---
+        // Alpha lowered to 0.60
+        gray_1: (red: 0.07843, green: 0.07843, blue: 0.07450, alpha: 0.60),
+        gray_2: (red: 0.16470, green: 0.16470, blue: 0.16078, alpha: 0.60),
         
-        // --- Neutral Ramp (Dark to Light) ---
-        // Tinted slightly warm to match the "paper" aesthetic of the brand.
-        
-        // #0d0d0c - Deepest black-brown
-        neutral_0: (red: 0.05098, green: 0.05098, blue: 0.04705, alpha: 1.0),
-        // #141413 - Base Background
-        neutral_1: (red: 0.07843, green: 0.07843, blue: 0.07450, alpha: 1.0),
-        // #1f1f1e
-        neutral_2: (red: 0.12156, green: 0.12156, blue: 0.11764, alpha: 1.0),
-        // #2a2a29 - Surface
-        neutral_3: (red: 0.16470, green: 0.16470, blue: 0.16078, alpha: 1.0),
-        // #3f3f3e
-        neutral_4: (red: 0.24705, green: 0.24705, blue: 0.24313, alpha: 1.0),
-        // #575756
+        // --- Neutral Ramp ---
+        neutral_0: (red: 0.05098, green: 0.05098, blue: 0.04705, alpha: 0.60),
+        neutral_1: (red: 0.07843, green: 0.07843, blue: 0.07450, alpha: 0.60),
+        neutral_2: (red: 0.12156, green: 0.12156, blue: 0.11764, alpha: 0.60),
+        neutral_3: (red: 0.16470, green: 0.16470, blue: 0.16078, alpha: 0.60),
+        neutral_4: (red: 0.24705, green: 0.24705, blue: 0.24313, alpha: 0.60),
+        // Text/Icons remain opaque
         neutral_5: (red: 0.34117, green: 0.34117, blue: 0.33725, alpha: 1.0),
-        // #757573
         neutral_6: (red: 0.45882, green: 0.45882, blue: 0.45098, alpha: 1.0),
-        // #b0aea5 - Mid Gray (Brand Secondary)
         neutral_7: (red: 0.69019, green: 0.68235, blue: 0.64705, alpha: 1.0),
-        // #d0cfc9
         neutral_8: (red: 0.81568, green: 0.81176, blue: 0.78823, alpha: 1.0),
-        // #e8e6dc - Light Gray (Brand Secondary)
         neutral_9: (red: 0.90980, green: 0.90196, blue: 0.86274, alpha: 1.0),
-        // #faf9f5 - Pampas (Brand Foreground)
         neutral_10: (red: 0.98039, green: 0.97647, blue: 0.96078, alpha: 1.0),
 
         // --- Accent Colors ---
-        // Mapped to specific brand tones or complimentary variations.
-        
-        // Serenity Blue #6a9bcc
         accent_blue: (red: 0.41568, green: 0.60784, blue: 0.80000, alpha: 1.0),
-        // Muted Indigo (Derived from Blue)
         accent_indigo: (red: 0.45098, green: 0.55686, blue: 0.75294, alpha: 1.0),
-        // Muted Purple
         accent_purple: (red: 0.61568, green: 0.47058, blue: 0.75294, alpha: 1.0),
-        // Pink -> Mapped to Crail/Orange family for consistency, or a soft rose.
         accent_pink: (red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0),
-        // Red #c15f3c
         accent_red: (red: 0.75686, green: 0.37254, blue: 0.23529, alpha: 1.0),
-        // Orange (Crail) #d97757 - PRIMARY ACCENT
         accent_orange: (red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0),
-        // Consensus Gold #ffd23f
         accent_yellow: (red: 1.00000, green: 0.82352, blue: 0.24705, alpha: 1.0),
-        // Olive Green #788c5d
         accent_green: (red: 0.47058, green: 0.54901, blue: 0.36470, alpha: 1.0),
-        // Warm Grey #b0aea5
         accent_warm_grey: (red: 0.69019, green: 0.68235, blue: 0.64705, alpha: 1.0),
 
-        // --- Extended Palette (often duplicates accents) ---
         ext_warm_grey: (red: 0.69019, green: 0.68235, blue: 0.64705, alpha: 1.0),
         ext_orange: (red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0),
         ext_yellow: (red: 1.00000, green: 0.82352, blue: 0.24705, alpha: 1.0),
@@ -74,8 +46,6 @@
         ext_indigo: (red: 0.45098, green: 0.55686, blue: 0.75294, alpha: 1.0),
     )),
     
-    // --- Layout & Spacing ---
-    // Standard COSMIC spacing for a clean, breathable interface.
     spacing: (
         space_none: 0,
         space_xxxs: 4,
@@ -89,8 +59,6 @@
         space_xxxl: 128
     ),
     
-    // --- Corner Radii ---
-    // Slightly softer corners to match the friendly AI aesthetic.
     corner_radii: (
         radius_0: (0.0, 0.0, 0.0, 0.0),
         radius_xs: (4.0, 4.0, 4.0, 4.0),
@@ -102,15 +70,16 @@
     
     // --- Overrides ---
     neutral_tint: None,
-    bg_color: Some((red: 0.07843, green: 0.07843, blue: 0.07450, alpha: 1.0)), // Force Base
+    // Note: bg_color alpha reduced to allow frosting
+    bg_color: Some((red: 0.07843, green: 0.07843, blue: 0.07450, alpha: 0.60)), 
     primary_container_bg: None,
     secondary_container_bg: None,
-    text_tint: Some((red: 0.98039, green: 0.97647, blue: 0.96078, alpha: 1.0)), // Force Pampas White Text/Icons
-    accent: Some((red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0)), // Revert to Bright Crail
+    text_tint: Some((red: 0.98039, green: 0.97647, blue: 0.96078, alpha: 1.0)), 
+    accent: Some((red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0)), 
     success: None,
     warning: None,
     destructive: None,
-    is_frosted: false, // Disabled for pure "Paper" look
+    is_frosted: true, // Enabled
     gaps: (8, 8),
     active_hint: 2,
     window_hint: Some((red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0))

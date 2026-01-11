@@ -1,6 +1,6 @@
 (
     palette: Dark((
-        name: "Anthropic Claude (Frosted)",
+        name: "Crail Paper (Frosted)",
         
         // --- Functional Colors ---
         bright_red: (red: 0.75686, green: 0.37254, blue: 0.23529, alpha: 1.0),

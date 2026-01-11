@@ -1,5 +1,5 @@
 (
-    name: "Anthropic Claude",
+    name: "Crail Paper",
     background: (red: 0.07843, green: 0.07843, blue: 0.07450, alpha: 1.0), // Warm Charcoal
     foreground: (red: 0.98039, green: 0.97647, blue: 0.96078, alpha: 1.0), // Pampas
     cursor: (red: 0.85098, green: 0.46666, blue: 0.34117, alpha: 1.0),     // Crail Orange

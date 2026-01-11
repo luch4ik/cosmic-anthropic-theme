@@ -1,6 +1,6 @@
-# Cosmic Theme - Anthropic Claude (Inspired)
+# Cosmic Theme - Crail Paper
 
-A high-quality theme for the COSMIC Desktop Environment, inspired by the design language of Anthropic and Claude.
+A high-quality theme for the COSMIC Desktop Environment, originally inspired by the design language of Anthropic and Claude.
 
 ## Design Philosophy
 
@@ -9,8 +9,7 @@ This theme translates the warm, intelligent, and "paper-like" aesthetic into a s
 *   **Warm Charcoal Backgrounds:** Moving away from sterile cold grays to earthy, warm dark tones (`#141413`).
 *   **Pampas White Text:** A soft, readable off-white (`#faf9f5`) that reduces eye strain.
 *   **Crail Orange Accent:** The signature terracotta orange (`#d97757`) provides a distinct and sophisticated focus color.
-    *   *Note:* `text_tint` is set to Pampas White to ensure high contrast against the bright orange accent.
-*   **Nature-Inspired Functional Colors:** Muted greens, blues, and golds derived from the official brand palette.
+*   **Nature-Inspired Functional Colors:** Muted greens, blues, and golds.
 
 ## Installation
 
@@ -21,9 +20,9 @@ This theme file has been validated against the official COSMIC configuration str
 2.  Navigate to **Appearance** -> **Theme**.
 3.  Click **Import**.
 4.  Select one of the following:
-    *   **`Anthropic_Claude_Inspired.ron`**: The authentic, opaque "Paper" look (Recommended).
-    *   **`Anthropic_Claude_Frosted.ron`**: A modern variant with translucent (85%), blurred backgrounds.
-    *   **`Anthropic_Claude_Glass.ron`**: A high-transparency (60%) variant for maximum blur.
+    *   **`Crail_Paper_Solid.ron`**: The authentic, opaque "Paper" look (Recommended).
+    *   **`Crail_Paper_Frosted.ron`**: A modern variant with translucent (85%), blurred backgrounds.
+    *   **`Crail_Paper_Glass.ron`**: A high-transparency (60%) variant for maximum blur.
 
 ### 2. Manual Color Palette
 If you prefer to only apply the colors without changing window geometry:
@@ -31,13 +30,13 @@ If you prefer to only apply the colors without changing window geometry:
 1.  Open **COSMIC Settings**.
 2.  Navigate to **Desktop** -> **Appearance** -> **Accent Color**.
 3.  Select **Custom/Import**.
-4.  Select `Anthropic_Claude_Accent.ron`.
+4.  Select `Crail_Paper_Accent.ron`.
 
 ### 3. COSMIC Terminal
 1.  Open **COSMIC Terminal**.
 2.  Go to **Settings** -> **Profiles**.
-3.  Select **Anthropic Claude**.
-    *   *Note:* If it doesn't appear, you can manually import `Anthropic_Claude_Terminal.ron` from this folder.
+3.  Select **Crail Paper**.
+    *   *Note:* If it doesn't appear, you can manually import `Crail_Paper_Terminal.ron` from this folder.
 
 ### 4. Wallpaper
 The installer places a high-quality PNG wallpaper in `~/.local/share/backgrounds/cosmic`.

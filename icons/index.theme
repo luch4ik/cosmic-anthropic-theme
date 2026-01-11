@@ -1,6 +1,6 @@
 [Icon Theme]
-Name=Anthropic Claude
-Comment=A custom icon theme with warm charcoal and terracotta tones.
+Name=Crail Paper
+Comment=A custom icon theme inspired by modern design principles.
 Inherits=cosmic,pop,hicolor
 Directories=apps/scalable,places/scalable,mimetypes/scalable
 
