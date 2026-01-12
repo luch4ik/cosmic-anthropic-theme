@@ -45,7 +45,7 @@ fi
 # 4. Wallpaper
 WALL_DIR="$HOME/.local/share/backgrounds/cosmic"
 echo "Removing Wallpaper..."
-rm -f "$WALL_DIR/anthropic-claude-wallpaper.png"
+rm -f "$WALL_DIR/crail-paper-wallpaper.png"
 
 # 5. GTK Override
 GTK_CSS="$HOME/.config/gtk-4.0/gtk.css"

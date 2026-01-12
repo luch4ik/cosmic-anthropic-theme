@@ -110,11 +110,18 @@ echo ""
 if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     WALL_DEST="$HOME/.local/share/backgrounds/cosmic"
     mkdir -p "$WALL_DEST"
-    cp "$SOURCE_DIR/extras/wallpaper/anthropic-claude-wallpaper.png" "$WALL_DEST/"
+    cp "$SOURCE_DIR/extras/wallpaper/crail-paper-wallpaper.png" "$WALL_DEST/"
     echo -e "${GREEN}Wallpaper installed.${NC}"
 else
     echo "Skipping wallpaper."
 fi
+
+# Firefox Theme
+echo ""
+echo -e "${ORANGE}Firefox Theme:${NC}"
+echo "The official Crail Paper theme is available on the Firefox Add-ons store."
+echo "URL: https://addons.mozilla.org/firefox/addon/crail-paper-theme/"
+echo ""
 
 # --- 5. Optional: MaterialOS Icons ---
 echo ""
@@ -154,5 +161,8 @@ echo "   Select 'Crail_Paper_Solid.ron', 'Crail_Paper_Frosted.ron', or 'Crail_Pa
 echo -e "4. Open ${ORANGE}COSMIC Terminal${NC} -> ${ORANGE}Settings${NC} -> ${ORANGE}Profiles${NC}."
 echo -e "   Select ${GREEN}Crail Paper${NC}."
 echo -e "5. Select the wallpaper in ${ORANGE}Desktop${NC} -> ${ORANGE}Wallpaper${NC}."
+echo -e "6. Install the ${ORANGE}Firefox Theme${NC}: ${GREEN}https://addons.mozilla.org/firefox/addon/crail-paper-theme/${NC}"
+echo ""
+echo "Find more COSMIC themes at: https://cosmic-themes.org/"
 echo ""
 echo "Enjoy your new desktop!"

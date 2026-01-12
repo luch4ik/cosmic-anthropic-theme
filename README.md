@@ -41,11 +41,12 @@ If you prefer to only apply the colors without changing window geometry:
 ### 4. Wallpaper
 The installer places a high-quality PNG wallpaper in `~/.local/share/backgrounds/cosmic`.
 1.  Go to **Desktop** -> **Wallpaper**.
-2.  Select the **Anthropic Claude** background.
+2.  Select the **Crail Paper** background.
 
 ### 5. Extras
 *   **GTK 4.0 Override:** Installed automatically to fix legacy GNOME apps.
-*   **Firefox Theme:** Located in `extras/firefox`. Load it via `about:debugging` -> `This Firefox` -> `Load Temporary Ad-on`.
+*   **Firefox Theme:** Official theme available on the [Firefox Add-ons Store](https://addons.mozilla.org/firefox/addon/crail-paper-theme/). Alternatively, you can find it in `extras/firefox`.
+*   **COSMIC Themes:** Also available on [cosmic-themes.org](https://cosmic-themes.org/).
 
 ## Recommended Companion Icons
 For a more comprehensive "Material" look that perfectly complements the geometry of this theme, we highly recommend the **MaterialOS Linux Icon Pack**:
